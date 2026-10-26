@@ -95,23 +95,6 @@ func init() {
 	securityv1.Install(scheme.Scheme)
 }
 
-func Namespace(component string) (*corev1.Namespace, error) {
-	if err := validateComponent(component); err != nil {
-		return nil, err
-	}
-
-	obj, err := loadObject(filepath.Join("yaml", component, "namespace.yaml"))
-	if err != nil {
-		return nil, err
-	}
-
-	ns, ok := obj.(*corev1.Namespace)
-	if !ok {
-		return nil, fmt.Errorf("unexpected type, got %t", obj)
-	}
-	return ns, nil
-}
-
 func ServiceAccount(component, subComponent, namespace string) (*corev1.ServiceAccount, error) {
 	if err := validateComponent(component); err != nil {
 		return nil, err
@@ -243,61 +226,6 @@ func APICRD() (*apiextensionv1.CustomResourceDefinition, error) {
 		return nil, fmt.Errorf("unexpected type, got %t", obj)
 	}
 	return crd, nil
-}
-
-func SchedulerCRD() (*apiextensionv1.CustomResourceDefinition, error) {
-	obj, err := loadObject("yaml/sched/podgroup.crd.yaml")
-	if err != nil {
-		return nil, err
-	}
-
-	crd, ok := obj.(*apiextensionv1.CustomResourceDefinition)
-	if !ok {
-		return nil, fmt.Errorf("unexpected type, got %t", obj)
-	}
-	return crd, nil
-}
-
-func ConfigMap(component, subComponent string) (*corev1.ConfigMap, error) {
-	if err := validateComponent(component); err != nil {
-		return nil, err
-	}
-	if err := validateSubComponent(component, subComponent); err != nil {
-		return nil, err
-	}
-	obj, err := loadObject(filepath.Join("yaml", component, subComponent, "configmap.yaml"))
-	if err != nil {
-		return nil, err
-	}
-
-	crd, ok := obj.(*corev1.ConfigMap)
-	if !ok {
-		return nil, fmt.Errorf("unexpected type, got %t", obj)
-	}
-	return crd, nil
-}
-
-func Deployment(component, subComponent, namespace string) (*appsv1.Deployment, error) {
-	if err := validateComponent(component); err != nil {
-		return nil, err
-	}
-	if err := validateSubComponent(component, subComponent); err != nil {
-		return nil, err
-	}
-	obj, err := loadObject(filepath.Join("yaml", component, subComponent, "deployment.yaml"))
-	if err != nil {
-		return nil, err
-	}
-
-	dp, ok := obj.(*appsv1.Deployment)
-	if !ok {
-		return nil, fmt.Errorf("unexpected type, got %t", obj)
-	}
-
-	if namespace != "" {
-		dp.Namespace = namespace
-	}
-	return dp, nil
 }
 
 func DaemonSet(component, subComponent string, namespace string) (*appsv1.DaemonSet, error) {
@@ -539,28 +467,4 @@ func validateRoleName(roleName string) error {
 		return nil
 	}
 	return fmt.Errorf("unknown roleName %q", roleName)
-}
-
-func Service(component, subComponent, namespace string) (*corev1.Service, error) {
-	if err := validateComponent(component); err != nil {
-		return nil, err
-	}
-	if err := validateSubComponent(component, subComponent); err != nil {
-		return nil, err
-	}
-
-	obj, err := loadObject(filepath.Join("yaml", component, subComponent, "service.yaml"))
-	if err != nil {
-		return nil, err
-	}
-
-	sv, ok := obj.(*corev1.Service)
-	if !ok {
-		return nil, fmt.Errorf("unexpected type, got %t", obj)
-	}
-
-	if namespace != "" {
-		sv.Namespace = namespace
-	}
-	return sv, nil
 }
