@@ -24,7 +24,7 @@ import (
 
 	machineconfigv1 "github.com/openshift/api/machineconfiguration/v1"
 
-	rtemanifests "github.com/k8stopologyawareschedwg/deployer/pkg/manifests/rte"
+	rtemanifests "github.com/openshift-kni/numaresources-operator/internal/deployer/manifests/rte"
 
 	nropv1 "github.com/openshift-kni/numaresources-operator/api/v1"
 	nodegroupv1 "github.com/openshift-kni/numaresources-operator/api/v1/helper/nodegroup"

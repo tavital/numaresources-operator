@@ -43,9 +43,9 @@ import (
 
 	configv1 "github.com/openshift/api/config/v1"
 
-	"github.com/k8stopologyawareschedwg/deployer/pkg/deployer/platform"
-	depmanifests "github.com/k8stopologyawareschedwg/deployer/pkg/manifests"
-	depobjupdate "github.com/k8stopologyawareschedwg/deployer/pkg/objectupdate"
+	"github.com/openshift-kni/numaresources-operator/internal/deployer/deployer/platform"
+	depmanifests "github.com/openshift-kni/numaresources-operator/internal/deployer/manifests"
+	depobjupdate "github.com/openshift-kni/numaresources-operator/internal/deployer/objectupdate"
 
 	nropv1 "github.com/openshift-kni/numaresources-operator/api/v1"
 	"github.com/openshift-kni/numaresources-operator/internal/api/annotations"

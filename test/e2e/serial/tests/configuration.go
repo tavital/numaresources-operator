@@ -57,8 +57,8 @@ import (
 	operatorv1 "github.com/openshift/api/operator/v1"
 	ctrltls "github.com/openshift/controller-runtime-common/pkg/tls"
 
-	depnodes "github.com/k8stopologyawareschedwg/deployer/pkg/clientutil/nodes"
-	"github.com/k8stopologyawareschedwg/deployer/pkg/deployer/platform"
+	depnodes "github.com/openshift-kni/numaresources-operator/internal/deployer/clientutil/nodes"
+	"github.com/openshift-kni/numaresources-operator/internal/deployer/deployer/platform"
 	nrtv1alpha2 "github.com/k8stopologyawareschedwg/noderesourcetopology-api/pkg/apis/topology/v1alpha2"
 	"github.com/k8stopologyawareschedwg/resource-topology-exporter/test/e2e/utils/nodes"
 

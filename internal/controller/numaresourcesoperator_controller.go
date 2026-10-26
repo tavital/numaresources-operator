@@ -49,10 +49,10 @@ import (
 	machineconfigv1 "github.com/openshift/api/machineconfiguration/v1"
 	securityv1 "github.com/openshift/api/security/v1"
 
-	"github.com/k8stopologyawareschedwg/deployer/pkg/deployer/platform"
-	"github.com/k8stopologyawareschedwg/deployer/pkg/manifests"
-	apimanifests "github.com/k8stopologyawareschedwg/deployer/pkg/manifests/api"
-	k8swgrteupdate "github.com/k8stopologyawareschedwg/deployer/pkg/objectupdate/rte"
+	"github.com/openshift-kni/numaresources-operator/internal/deployer/deployer/platform"
+	"github.com/openshift-kni/numaresources-operator/internal/deployer/manifests"
+	apimanifests "github.com/openshift-kni/numaresources-operator/internal/deployer/manifests/api"
+	k8swgrteupdate "github.com/openshift-kni/numaresources-operator/internal/deployer/objectupdate/rte"
 
 	nropv1 "github.com/openshift-kni/numaresources-operator/api/v1"
 	"github.com/openshift-kni/numaresources-operator/api/v1/helper/namespacedname"

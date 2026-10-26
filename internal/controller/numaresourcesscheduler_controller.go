@@ -41,9 +41,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/predicate"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
-	"github.com/k8stopologyawareschedwg/deployer/pkg/deployer/platform"
-	k8swgmanifests "github.com/k8stopologyawareschedwg/deployer/pkg/manifests"
-	k8swgrbacupdate "github.com/k8stopologyawareschedwg/deployer/pkg/objectupdate/rbac"
+	"github.com/openshift-kni/numaresources-operator/internal/deployer/deployer/platform"
+	k8swgmanifests "github.com/openshift-kni/numaresources-operator/internal/deployer/manifests"
+	k8swgrbacupdate "github.com/openshift-kni/numaresources-operator/internal/deployer/objectupdate/rbac"
 
 	nropv1 "github.com/openshift-kni/numaresources-operator/api/v1"
 	"github.com/openshift-kni/numaresources-operator/internal/api/annotations"

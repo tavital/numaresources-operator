@@ -31,7 +31,7 @@ import (
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	k8swgmanifests "github.com/k8stopologyawareschedwg/deployer/pkg/manifests"
+	k8swgmanifests "github.com/openshift-kni/numaresources-operator/internal/deployer/manifests"
 
 	nropv1 "github.com/openshift-kni/numaresources-operator/api/v1"
 	"github.com/openshift-kni/numaresources-operator/internal/api/annotations"

@@ -26,7 +26,7 @@ import (
 
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	depwait "github.com/k8stopologyawareschedwg/deployer/pkg/deployer/wait"
+	depwait "github.com/openshift-kni/numaresources-operator/internal/deployer/deployer/wait"
 
 	nropv1 "github.com/openshift-kni/numaresources-operator/api/v1"
 	"github.com/openshift-kni/numaresources-operator/internal/wait"
